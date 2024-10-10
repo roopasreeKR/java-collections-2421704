@@ -2,62 +2,53 @@ package com.linkedin.collections;
 
 public class Room {
 
-	private String name;
+private String name;
+private String type;
+private int capacity;
+private double cost;
 
-	private String type;
-
-	private int capacity;
-
-	private double rate;
-
-	public Room(String name, String type, int capacity, double rate) {
+	public Room(String name, String type, int capacity, double cost){
 		this.name = name;
 		this.type = type;
 		this.capacity = capacity;
-		this.rate = rate;
+		this.cost = cost;
 	}
 
-	public String getName() {
+	public String getName(){
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	public void setName(String name){
+         this.name= name;
 
-	public String getType() {
+    }
+
+	public String getType(){
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(String type){
 		this.type = type;
 	}
 
-	public int getCapacity() {
+	public int getCapacity(){
 		return capacity;
 	}
 
-	public void setCapacity(int capacity) {
+	public void setCapapcity(){
 		this.capacity = capacity;
 	}
 
-	public double getRate() {
-		return rate;
+	public double getCost(){
+		return cost;
 	}
 
-	public void setRate(double rate) {
-		this.rate = rate;
-	}
-
-	public Room(String name, String type) {
-		super();
-		this.name = name;
-		this.type = type;
+	public void setCost(double cost){
+		this.cost = cost;
 	}
 
 	@Override
-	public String toString() {
-		return "Room [name=" + name + ", type=" + type + ", capacity=" + capacity + ", rate=" + rate + "]";
+	public String toString(){
+       return "name=" + name+"type=" +type +"capacity="+capacity +"cost="+cost;
 	}
-
 }

@@ -1,18 +1,21 @@
 package com.linkedin.collections;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class Application {
 
-	public static void main(String[] args) {
-	
-		Room cambridge = new Room("Cambridge", "Premiere Room", 4, 175.00);
-		Room manchester = new Room("Manchester", "Suite", 5, 250.0);
+	public static void main(String args[]){
+		Room nag = new Room("Nag", "double", 2, 234);	
+		Room seetha = new Room("Seetha", "single", 1, 134);
 
-		double total = getPotentialRevenue(cambridge, manchester);
-		System.out.println(total);
-	}
-	
-	private static double getPotentialRevenue(Room room1, Room room2) {
-		return room1.getRate() + room2.getRate();
+		Collection<Room> roomList = List.of(nag, seetha);
+		double sumAmount = getSumValueOfRent(roomList);
+		System.out.println(sumAmount);
 	}
 
+	public static double getSumValueOfRent(Collection<Room> roomList){
+		return roomList.stream().mapToDouble(r -> r.getCost()).sum();
+	}
 }
